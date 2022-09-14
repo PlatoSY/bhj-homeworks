@@ -11,8 +11,8 @@ const lostCounter = document.getElementById('lost');
 //   document.getElementById('hole8'),
 //   document.getElementById('hole9'),
 // ];
-function holePosition(n) {
-  document.getElementById(`hole${n}`);
+function holePosition(index) {
+  document.getElementById(`hole${index}`);
   return;
 }
 
@@ -23,15 +23,15 @@ for (let i = 1; i <= 9; i++) {
   let hole = holePosition(i);
   hole.onclick = holeHit;
   function holeHit() {
-    if (hole.className.includes('hole_has-mole')) {
+    if (hole.classList.contains('hole_has-mole')) {
       successCounter.textContent = successCounter.textContent++;
     } else {
       lostCounter.textContent = lostCounter.textContent++;
     }
-    if (successCounter.textContent == 5) {
+    if (successCounter.textContent == 10) {
       alert('Победа!');
     }
-    if (lostCounter.textContent == 10) {
+    if (lostCounter.textContent == 5) {
       alert('Поражение');
     }
   }
