@@ -16,23 +16,28 @@ function holePosition(index) {
   return;
 }
 
-successCounter.textContent = 0;
-lostCounter.textContent = 0;
+// successCounter.textContent = 0;
+// lostCounter.textContent = 0;
 
 for (let i = 1; i <= 9; i++) {
   let hole = holePosition(i);
   hole.onclick = holeHit;
   function holeHit() {
-    if (hole.classList.contains('hole_has-mole')) {
-      successCounter.textContent = successCounter.textContent++;
+    console.log(`${i}`);
+    if (hole.classList.includes('hole_has-mole')) {
+      successCounter.textContent = +successCounter.textContent + 1;
     } else {
-      lostCounter.textContent = lostCounter.textContent++;
+      lostCounter.textContent = +lostCounter.textContent + 1;
     }
     if (successCounter.textContent == 10) {
       alert('Победа!');
+      successCounter.textContent = 0;
+      lostCounter.textContent = 0;
     }
     if (lostCounter.textContent == 5) {
       alert('Поражение');
+      successCounter.textContent = 0;
+      lostCounter.textContent = 0;
     }
   }
 }
