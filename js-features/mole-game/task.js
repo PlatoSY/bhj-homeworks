@@ -1,30 +1,15 @@
 const successCounter = document.getElementById('dead');
 const lostCounter = document.getElementById('lost');
-// let holePosition = [
-//   document.getElementById('hole1'),
-//   document.getElementById('hole2'),
-//   document.getElementById('hole3'),
-//   document.getElementById('hole4'),
-//   document.getElementById('hole5'),
-//   document.getElementById('hole6'),
-//   document.getElementById('hole7'),
-//   document.getElementById('hole8'),
-//   document.getElementById('hole9'),
-// ];
+
 function holePosition(index) {
-  document.getElementById(`hole${index}`);
-  return;
+  return document.getElementById(`hole${index}`);
 }
-
-// successCounter.textContent = 0;
-// lostCounter.textContent = 0;
-
 for (let i = 1; i <= 9; i++) {
   let hole = holePosition(i);
   hole.onclick = holeHit;
   function holeHit() {
     console.log(`${i}`);
-    if (hole.classList.includes('hole_has-mole')) {
+    if (hole.classList.contains('hole_has-mole')) {
       successCounter.textContent = +successCounter.textContent + 1;
     } else {
       lostCounter.textContent = +lostCounter.textContent + 1;
