@@ -4,7 +4,7 @@ const menuItem = document.querySelectorAll('.menu__item');
 // console.log(menuItem);
 
 let links = Array.from(menuLinks);
-// console.log(link);
+console.log(link);
 function menuToggle() {
   links.forEach(
     (i) =>
@@ -18,7 +18,7 @@ function menuToggle() {
   );
 }
 menuToggle();
-// for (let i = 0; i< menuLinks.length; i++) {
-//   let  menuLink = menuLinks[i];
-
+// for (let i = 0; i < menuLinks.length; i++) {
+//   let menuLink = menuLinks[i];
+//   console.log(menuLink);
 // }
