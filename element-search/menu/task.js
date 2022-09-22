@@ -4,21 +4,18 @@ const menuItem = document.querySelectorAll('.menu__item');
 // console.log(menuItem);
 
 let links = Array.from(menuLinks);
-console.log(link);
-function menuToggle() {
-  links.forEach(
-    (i) =>
-      (i.onclick = function () {
-        let closestMenu = i.closest('.menu__item');
-        // console.log(closestMenu);
-        if (closestMenu.classList('menu_sub')) {
-          closestMenu.classList.toggle('menu_active');
-        }
-      })
-  );
+
+for (let i = 0; i < links.length; i++) {
+  let link = links[i];
+  let item = link.closest('.menu__item');
+  console.log(link);
+  console.log(item);
+  let subMenu = item.querySelector('.menu_sub');
+  console.log(subMenu);
+  link.onclick = function () {
+    if (subMenu) {
+      subMenu.classList.toggle('menu_active');
+      return false;
+    }
+  };
 }
-menuToggle();
-// for (let i = 0; i < menuLinks.length; i++) {
-//   let menuLink = menuLinks[i];
-//   console.log(menuLink);
-// }

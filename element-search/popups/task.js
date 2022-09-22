@@ -9,6 +9,8 @@ function modalClose() {
     (i) =>
       (i.onclick = function () {
         modalMain.classList.remove('modal_active');
+        let modalActive = this.closest('.modal');
+        modalActive.classList.remove('modal_active');
       })
   );
 }
