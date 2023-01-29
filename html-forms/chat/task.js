@@ -14,8 +14,8 @@ widget.forEach((element) => {
 });
 
 input.addEventListener('keyup', (event) => {
-  if (event.key === 'Enter' && input.value !== '') {
-    const userText = input.value;
+  if (event.key === 'Enter' && input.value.trim() !== '') {
+    const userText = input.value.trim();
 
     messages.innerHTML += `
 		<div class="message message_client">
