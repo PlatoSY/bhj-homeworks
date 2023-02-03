@@ -34,15 +34,17 @@ productAddButton.forEach((item) => {
       cartProducts.getElementsByClassName('cart__product')
     );
 
-    const productInCart = cartProductsArray.find(
+    let productInCart = cartProductsArray.find(
       (item) => item.dataset.id === productItem.dataset.id
     );
 
+    // console.log(productInCartCount);
     if (productInCart) {
       const productInCartCount = cartProducts.querySelector(
         '.cart__product-count'
       );
-      productInCartCount.textContent = productAmount.textContent;
+      productInCartCount.textContent =
+        +productAmount.textContent + +productInCartCount.textContent;
     } else {
       cartProducts.insertAdjacentHTML(
         'beforeend',
